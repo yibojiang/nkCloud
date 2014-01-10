@@ -7,5 +7,5 @@ AV.Cloud.define("hello", function(request, response) {
 AV.Cloud.define("GetDateTime",function(request,response){
 	var d1=new Date();
 	//response.success(d1.toString('yyyy-MM-dd'));
-	response.success(d1.toUTCString());
+	response.success(d1.toISOString());
 });
