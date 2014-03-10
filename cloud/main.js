@@ -57,7 +57,7 @@ var responseCodes = {
 
 AV.Cloud.define("RegisterPlayer", function(request, response)
 {
-	console.log("[RegisterPlayer]");
+	//console.log("[RegisterPlayer]");
 	
 	var deviceId = request.params.deviceId;
 	
@@ -72,11 +72,11 @@ AV.Cloud.define("RegisterPlayer", function(request, response)
 	
 	var PlayerData = AV.Object.extend("PlayerData");
 	
-	console.log("deviceId: " + deviceId);
+	//console.log("deviceId: " + deviceId);
 	
-	console.log("hasRequestCache: " + hasRequestCache);
+	//console.log("hasRequestCache: " + hasRequestCache);
 	
-	console.log("playerObjId: " + playerObjId);
+	//console.log("playerObjId: " + playerObjId);
 	
 	var query = new AV.Query("PlayerData");
 	
@@ -98,9 +98,9 @@ AV.Cloud.define("RegisterPlayer", function(request, response)
 		{	
 			if(objects.length==0)
 			{
-				console.log("to create new player");
+				//console.log("to create new player");
 				
-				console.log("saveData: " + saveData);
+				//console.log("saveData: " + saveData);
 				
 				//create a new player for this deviceId
 				var player = new PlayerData();
@@ -122,7 +122,7 @@ AV.Cloud.define("RegisterPlayer", function(request, response)
 			{
 				currPlayer = objects[0];
 				
-				console.log("get old player");
+				//console.log("get old player");
 				
 				if (isPlayerObjIdPrior)
 				{
@@ -158,9 +158,9 @@ AV.Cloud.define("IAPVerify", function(request, response)
 	
 	var isSandbox = request.params.sandbox;
 	
-	console.log("isSandbox: " + isSandbox);
+	//console.log("isSandbox: " + isSandbox);
 	
-	console.log("receipt: " + receipt);
+	//console.log("receipt: " + receipt);
 	
 	var host;
 	
@@ -169,7 +169,7 @@ AV.Cloud.define("IAPVerify", function(request, response)
 	else
 		host = itunesProductionHost;
 		
-	console.log("host: " + host);
+	//console.log("host: " + host);
 	
 	AV.Cloud.httpRequest({
 	  method: "POST",
